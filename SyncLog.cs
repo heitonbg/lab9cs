@@ -1,4 +1,7 @@
-﻿public class SyncLog
+﻿using System;
+using System.Collections.Generic;
+
+public class SyncLog
 {
   public DateTime SyncTime { get; set; }
   public List<FileInfo> Files { get; set; } = new List<FileInfo>();

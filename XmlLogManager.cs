@@ -1,4 +1,8 @@
-﻿public class XmlLogManager : ILogManager
+﻿using System;
+using System.IO;
+using System.Xml.Serialization;
+
+public class XmlLogManager : ILogManager
 {
   private readonly string _logFilePath;
 

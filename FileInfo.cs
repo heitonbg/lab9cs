@@ -1,4 +1,6 @@
-﻿public class FileInfo
+﻿using System;
+
+public class FileInfo
 {
   public string Name { get; set; }
   public string Path { get; set; }
