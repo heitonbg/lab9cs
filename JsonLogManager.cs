@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
 using Newtonsoft.Json;
 
 public class JsonLogManager : ILogManager
@@ -13,7 +14,7 @@ public class JsonLogManager : ILogManager
 
   public void SaveLog(SyncLog log)
   {
-    string json = JsonConvert.SerializeObject(log, Formatting.Indented);
+    string json = JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented);
     File.WriteAllText(_logFilePath, json);
   }
 

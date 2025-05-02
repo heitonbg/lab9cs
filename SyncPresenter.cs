@@ -40,9 +40,16 @@ public class SyncPresenter
         return;
       }
 
-      ILogManager logManager = useJson 
-        ? new JsonLogManager("sync_log.json") 
-        : new XmlLogManager("sync_log.xml");
+      ILogManager logManager;
+
+      if (useJson) 
+      {
+        logManager = new JsonLogManager("sync_log.json");
+      }
+      else 
+      {
+        logManager = new XmlLogManager("sync_log.xml");
+      }
 
       var lastLog = logManager.LoadLog();
       var actions = _fileComparer.CompareDirectories(sourceDir, targetDir, lastLog);

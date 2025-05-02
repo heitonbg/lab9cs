@@ -49,7 +49,7 @@ public class FileComparer
     return actions;
   }
 
-  private List<FileInfo> GetFilesWithHashes(string directory)
+  public List<FileInfo> GetFilesWithHashes(string directory)
   {
     var files = new List<FileInfo>();
     foreach (var filePath in Directory.GetFiles(directory, "*", SearchOption.AllDirectories))
@@ -77,6 +77,8 @@ public class FileComparer
 
   private string GetRelativePath(string fullPath, string basePath)
   {
-    return Path.GetRelativePath(basePath, fullPath);
+    Uri baseUri = new Uri(basePath);
+    Uri fullUri = new Uri(fullPath);
+    return Uri.UnescapeDataString(baseUri.MakeRelativeUri(fullUri).ToString());
   }
 }
