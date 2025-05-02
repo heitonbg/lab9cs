@@ -55,7 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SyncLog.cs" />
     <Compile Include="SyncPresenter.cs" />
-    <Compile Include="SyncView.cs" />
+    <Compile Include="SyncView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="XmlLogManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

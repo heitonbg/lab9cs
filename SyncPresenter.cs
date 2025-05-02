@@ -1,4 +1,7 @@
-﻿public class SyncPresenter
+﻿using System;
+using System.IO;
+
+public class SyncPresenter
 {
   private readonly ISyncView _view;
   private readonly FileComparer _fileComparer;

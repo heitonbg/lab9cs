@@ -1,4 +1,10 @@
-﻿public class FileComparer
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+
+public class FileComparer
 {
   public List<string> CompareDirectories(string sourceDirectory, string targetDirectory, SyncLog lastLog)
   {

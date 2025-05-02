@@ -1,4 +1,7 @@
-﻿public partial class SyncView : Form, ISyncView
+﻿using System;
+using System.Windows.Forms;
+
+public partial class SyncView : Form, ISyncView
 {
   public event Action<string, string, bool> SyncRequested;
   public event Action<string> SourceDirSelected;

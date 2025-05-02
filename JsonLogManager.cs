@@ -1,4 +1,8 @@
-﻿public class JsonLogManager : ILogManager
+﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+
+public class JsonLogManager : ILogManager
 {
   private readonly string _logFilePath;
 

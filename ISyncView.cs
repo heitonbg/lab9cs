@@ -1,4 +1,6 @@
-﻿public interface ISyncView
+﻿using System;
+
+public interface ISyncView
 {
   event Action<string, string, bool> SyncRequested;
   event Action<string> SourceDirSelected;
