@@ -49,19 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileComparer.cs" />
-    <Compile Include="FileInfo.cs" />
-    <Compile Include="ILogManager.cs" />
-    <Compile Include="ISyncView.cs" />
-    <Compile Include="JsonLogManager.cs" />
+    <Compile Include="Model\ActionLogEntry.cs" />
+    <Compile Include="Services\FileComparer.cs" />
+    <Compile Include="Model\FileInfo.cs" />
+    <Compile Include="Logging\ILogManager.cs" />
+    <Compile Include="Enums\SyncAction.cs" />
+    <Compile Include="Services\SyncManager.cs" />
+    <Compile Include="View\ISyncView.cs" />
+    <Compile Include="Logging\JsonLogManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SyncLog.cs" />
-    <Compile Include="SyncPresenter.cs" />
-    <Compile Include="SyncView.cs">
+    <Compile Include="Model\SyncLog.cs" />
+    <Compile Include="Presenter\SyncPresenter.cs" />
+    <Compile Include="View\SyncView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XmlLogManager.cs" />
+    <Compile Include="Logging\XmlLogManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,5 +88,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
