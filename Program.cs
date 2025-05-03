@@ -1,22 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileSync.View;
+using FileSync.Logging;
+using FileSync.Presenter;
 
-namespace lab9cs
+namespace FileSync
 {
-    internal static class Program
+  internal static class Program
+  {
+    [STAThread]
+    private static void Main()
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
-        [STAThread]
-        static void Main()
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+
+      var syncView = new SyncView();
+      var logManagerFactory = new Func<bool, ILogManager>(useJson =>
+      {
+        if (useJson)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+          return new JsonLogManager("sync_log.json");
         }
+        else
+        {
+          return new XmlLogManager("sync_log.xml");
+        }
+      });
+      
+      var presenter = new SyncPresenter(syncView, logManagerFactory);
+
+      Application.Run(syncView);
     }
+  }
 }
