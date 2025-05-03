@@ -1,4 +1,6 @@
-﻿namespace FileSync.Model
+﻿using FileSync.Enums;
+
+namespace FileSync.Model
 {
     public class ActionLogEntry
     {

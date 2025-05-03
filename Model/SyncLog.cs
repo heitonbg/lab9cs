@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace FileSync.Models
+namespace FileSync.Model
 {
-    public class SyncLog
-    {
-        public DateTime SyncTime { get; set; }
-        public List<FileInfo> Files { get; set; } = new List<FileInfo>();
-        public List<ActionLogEntry> Actions { get; set; } = new List<ActionLogEntry>();
-    }
+  public class SyncLog
+  {
+    public DateTime SyncTime { get; set; }
+    public List<FileInfo> Files { get; set; } = new List<FileInfo>();
+    public List<ActionLogEntry> Actions { get; set; } = new List<ActionLogEntry>();
+  }
 }

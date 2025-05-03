@@ -49,12 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionLogEntry.cs" />
-    <Compile Include="FileComparer.cs" />
+    <Compile Include="Model\ActionLogEntry.cs" />
+    <Compile Include="Services\FileComparer.cs" />
     <Compile Include="Model\FileInfo.cs" />
     <Compile Include="Logging\ILogManager.cs" />
     <Compile Include="Enums\SyncAction.cs" />
-    <Compile Include="SyncManager.cs" />
+    <Compile Include="Services\SyncManager.cs" />
     <Compile Include="View\ISyncView.cs" />
     <Compile Include="Logging\JsonLogManager.cs" />
     <Compile Include="Program.cs" />
@@ -88,5 +88,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

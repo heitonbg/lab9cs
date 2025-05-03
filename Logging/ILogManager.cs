@@ -1,10 +1,10 @@
-﻿namespace FileSync.Logging
-{
-    using FileSync.Models;
+﻿using FileSync.Model;
 
-    public interface ILogManager
-    {
-        void SaveLog(SyncLog log);
-        SyncLog LoadLog();
-    }
+namespace FileSync.Logging
+{
+  public interface ILogManager
+  {
+    void SaveLog(SyncLog log);
+    SyncLog LoadLog();
+  }
 }
