@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace FileSync.Views
+namespace FileSync.View
 {
   public partial class SyncView : Form, ISyncView
   {
@@ -20,7 +20,7 @@ namespace FileSync.Views
 
     public SyncView()
     {
-      //InitializeComponent();
+      InitializeComponent();
     }
 
     public void UpdateLog(string message)
@@ -38,7 +38,7 @@ namespace FileSync.Views
       targetDirTextBox.Text = path;
     }
 
-    private void OnSourceBrowseButtonClick(object sender, EventArgs e)
+    private void OnSourceBrowseButtonClick(object sender, EventArgs eventArgs)
     {
       if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
@@ -46,7 +46,7 @@ namespace FileSync.Views
       }
     }
 
-    private void OnTargetBrowseButtonClick(object sender, EventArgs e)
+    private void OnTargetBrowseButtonClick(object sender, EventArgs eventArgs)
     {
       if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
@@ -54,7 +54,7 @@ namespace FileSync.Views
       }
     }
 
-    private void OnSyncButtonClick(object sender, EventArgs e)
+    private void OnSyncButtonClick(object sender, EventArgs eventArgs)
     {
       bool useJson = jsonRadioButton.Checked;
       SyncRequested?.Invoke(

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using FileSync.Views;
+using FileSync.View;
 using FileSync.Logging;
 using FileSync.Presenter;
 
@@ -14,7 +14,7 @@ namespace FileSync
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
 
-      var view = new SyncView();
+      var syncView = new SyncView();
       var logManagerFactory = new Func<bool, ILogManager>(useJson =>
       {
         if (useJson)
@@ -27,9 +27,9 @@ namespace FileSync
         }
       });
       
-      var presenter = new SyncPresenter(view, logManagerFactory);
+      var presenter = new SyncPresenter(syncView, logManagerFactory);
 
-      Application.Run(view);
+      Application.Run(syncView);
     }
   }
 }
