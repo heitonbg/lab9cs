@@ -1,17 +1,25 @@
-﻿using System;
-using System.Windows.Forms;
-
-internal static class Program
+﻿namespace FileSync
 {
-  [STAThread]
-  private static void Main()
-  {
-    Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(false);
+    using System;
+    using System.Windows.Forms;
+    using FileSync.Views;
+    using FileSync.Logging;
+    using FileSync.Presenter;
 
-    var view = new SyncView();
-    var presenter = new SyncPresenter(view);
+    internal static class Program
+    {
+        [STAThread]
+        private static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-    Application.Run(view);
-  }
+            var view = new SyncView();
+            var logManagerFactory = new Func<bool, ILogManager>(useJson =>
+                useJson ? new JsonLogManager("sync_log.json") : new XmlLogManager("sync_log.xml"));
+            var presenter = new SyncPresenter(view, logManagerFactory);
+
+            Application.Run(view);
+        }
+    }
 }
